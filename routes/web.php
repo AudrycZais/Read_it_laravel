@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controllers\PostsController::class, 'index'])
+    ->name('homepage');
+
+    
+Route::get('/posts', [Controllers\PostsController::class, 'index'])
+    ->name('posts.index');
+
+Route::get('/posts/{post}/{slug}', [Controllers\PostsController::class, 'show'])
+    ->name('posts.show');
+
+    Route::get('/contact', function () {
+        return view('template.partials._contact');
+    })
+    ->name('contact');
+
