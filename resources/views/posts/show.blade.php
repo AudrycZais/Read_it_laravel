@@ -29,6 +29,13 @@
             <p>{{$post->author->biography}}</p>
         </div>
     </div>
+
+    <div class="pt-5 mt-5">
+              @include('comments._index')
+              <!-- END comment-list -->
+
+              @include('comments._form')
+            </div>
 </div>
 
 @stop

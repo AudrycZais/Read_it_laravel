@@ -21,4 +21,12 @@ class PostsController extends Controller
         return view('posts.show', compact('post'));
     }
         
+    public function ajaxOlders(Request $request){
+        $posts= Post::orderBy('created_at', 'DESC')
+        ->take(10)
+        ->offset($request->get('offset'))
+        ->get();
+        
+        return view('posts.liste', compact('posts'));
+    }
 }

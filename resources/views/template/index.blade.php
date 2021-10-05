@@ -3,7 +3,7 @@
   <head>
     @include('template.partials._head')
   </head>
-  <body>
+  <body data-baseURL="{{ url('/')}}">
 
 	  @include('template.partials._nav')
     <!-- END nav -->

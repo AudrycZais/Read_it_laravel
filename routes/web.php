@@ -29,3 +29,15 @@ Route::get('/posts/{post}/{slug}', [Controllers\PostsController::class, 'show'])
     })
     ->name('contact');
 
+
+
+// ROUTES AJAX
+
+//loading older posts
+//PATTERN: /ajax/older-posts
+//CTRL: PostsController
+//ACTION: ajaxOlders
+
+Route::get('ajax/older-posts',[Controllers\PostsController::class ,'ajaxOlders'] ) ->name('posts.ajax.olders');
+
+
