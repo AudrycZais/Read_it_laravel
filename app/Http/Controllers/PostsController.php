@@ -29,4 +29,6 @@ class PostsController extends Controller
         
         return view('posts.liste', compact('posts'));
     }
+
+    
 }

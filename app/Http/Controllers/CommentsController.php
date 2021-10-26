@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use Illuminate\Http\Request;
 
 
 class CommentsController extends Controller
 {
-    public function index(){
-        $comments = Comment::orderBy('created_at', 'desc')->get();
-        return view('comment._index' , compact('comments'));
+    public function ajaxInsert(Request $request){
+        $comment = new Comment;
+        $comment->pseudo = $request->pseudo;
+        $comment->pseudo = $request->text;
+        $comment->pseudo = $request->postID;
+        $comment->save();
+        return view ('comments._show', ['comment' =>$comment]);
+        
     }
 
 }

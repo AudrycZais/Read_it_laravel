@@ -41,3 +41,9 @@ Route::get('/posts/{post}/{slug}', [Controllers\PostsController::class, 'show'])
 Route::get('ajax/older-posts',[Controllers\PostsController::class ,'ajaxOlders'] ) ->name('posts.ajax.olders');
 
 
+Route::get('ajax/insert',[Controllers\CommentsController::class ,'ajaxInsert'] ) ->name('posts.ajax.insert');
+
+
+
+
+
